@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arafa Mohamed | Portfolio</title>
+
+    <!-- رابط مكتبة particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: #e5e7eb;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ===== PARTICLES BACKGROUND ===== */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            top: 0;
+            left: 0;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #020617, #020617dd);
+        }
+
+        .hero-content {
+            max-width: 1100px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .hero img {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #38bdf8;
+            box-shadow: 0 0 40px #38bdf855;
+            margin: auto;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-weight: normal;
+            margin-bottom: 20px;
+            color: #cbd5f5;
+            min-height: 50px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 500px;
+            color: #d1d5db;
+            margin-bottom: 25px;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #38bdf8;
+            color: #020617;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: .3s;
+            margin-right: 10px;
+        }
+
+        .btn:hover {
+            background: #e0f2fe;
+            transform: translateY(-3px);
+        }
+
+        .links {
+            margin-top: 15px;
+        }
+
+        .links a {
+            display: inline-block;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 25px;
+            border-radius: 25px;
+            color: #020617;
+            background: #38bdf8;
+            margin-right: 10px;
+            transition: .3s;
+        }
+
+        .links a:hover {
+            background: #e0f2fe;
+            transform: translateY(-3px);
+        }
+
+        /* ===== SECTION ===== */
+        section {
+            padding: 80px 20px;
+            max-width: 1100px;
+            margin: auto;
+            transition: 0.6s;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+        }
+
+        section h3 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #38bdf8;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-box {
+            background: #020617;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 10px 25px #00000055;
+            transition: 0.3s;
+        }
+
+        .skill-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px #38bdf833;
+        }
+
+        .skill-box h4 {
+            margin-bottom: 10px;
+            color: #e0f2fe;
+        }
+
+        /* ===== CONTACT FORM ===== */
+        .contact-form {
+            background: #020617;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 10px 25px #00000055;
+        }
+
+        .contact-form h3 {
+            margin-bottom: 20px;
+            color: #38bdf8;
+            text-align: center;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 12px;
+            background: #38bdf8;
+            color: #020617;
+            font-weight: bold;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .contact-form button:hover {
+            background: #e0f2fe;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #94a3b8;
+        }
+
+        @media(max-width:900px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .links a {
+                margin: 10px 5px 0 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- PARTICLES -->
+    <div id="particles-js"></div>
+
+    <!-- HERO -->
+    <div class="hero">
+        <div class="hero-content">
+            <img src="photo_2026-01-26_15-44-36.jpg" alt="Arafa Mohamed">
+            <div>
+                <h1>Arafa Mohamed</h1>
+                <h2 id="hero-title"></h2>
+                <p>Passionate learner focused on <strong>Cyber Security</strong> and building secure, scalable web
+                    applications with modern <strong>Front-End</strong> & <strong>Back-End</strong> technologies.</p>
+                <div class="links">
+                    <a href="https://github.com/ArafaMohamed" target="_blank">GitHub</a>
+                    <a href="https://linkedin.com/in/arafa-mohamed" target="_blank">LinkedIn</a>
+                    <a href="Arafa.CV.pdf" download="Arafa_Mohamed_CV.pdf">View CV</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section>
+        <h3>About Me</h3>
+        <p>I am a motivated learner with a strong focus on <strong>Cyber Security</strong> and web development. I aim to
+            integrate secure practices into my web projects, building safe and scalable applications while enhancing my
+            skills in both <strong>front-end</strong> and <strong>back-end</strong> technologies.</p>
+    </section>
+
+    <!-- SKILLS -->
+    <section>
+        <h3>Skills</h3>
+        <div class="skills">
+            <div class="skill-box">
+                <h4>Cyber Security</h4>
+                <p>Security Basics, Risk Management, Networking Fundamentals</p>
+            </div>
+            <div class="skill-box">
+                <h4>Front-End</h4>
+                <p>HTML, CSS, JavaScript, Responsive Design</p>
+            </div>
+            <div class="skill-box">
+                <h4>Back-End</h4>
+                <p>Node.js, PHP Basics, Databases Concepts</p>
+            </div>
+            <div class="skill-box">
+                <h4>Tools</h4>
+                <p>Linux, Git, GitHub, VS Code</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section>
+        <div class="contact-form">
+            <h3>Contact Me</h3>
+            <form action="https://formsubmit.co/arafamd7420@gmail.com" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>© 2026 Arafa Mohamed — Portfolio</footer>
+
+    <script>
+        // Typing effect
+        const title = "Cyber Security & Full-Stack Developer";
+        const heroTitle = document.getElementById("hero-title");
+        let index = 0;
+        function typeEffect() { if (index < title.length) { heroTitle.textContent += title.charAt(index); index++; setTimeout(typeEffect, 100); } }
+        heroTitle.textContent = ""; setTimeout(typeEffect, 500);
+
+        // Particles.js configuration
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#38bdf8" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": true },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#38bdf8", "opacity": 0.4, "width": 1 },
+                "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "bounce": false }
+            },
+            "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } } },
+            "retina_detect": true
+        });
+    </script>
+
+</body>
+
+</html>
