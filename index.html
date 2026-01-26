@@ -2,9 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arafa Mohamed | Portfolio</title>
+
+    <!-- مكتبة particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
     <style>
         * {
             margin: 0;
@@ -17,15 +21,26 @@
             background: #0f172a;
             color: #e5e7eb;
             line-height: 1.7;
+            overflow-x: hidden;
         }
 
+        /* PARTICLES BACKGROUND */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            top: 0;
+            left: 0;
+        }
+
+        /* HERO */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 60px 20px;
-            background: linear-gradient(135deg, #020617, #020617dd);
         }
 
         .hero-content {
@@ -82,23 +97,7 @@
             margin-bottom: 25px;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: #38bdf8;
-            color: #020617;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-            margin-right: 10px;
-        }
-
-        .btn:hover {
-            background: #e0f2fe;
-            transform: translateY(-3px);
-        }
-
+        /* LINKS / BUTTONS */
         .links {
             margin-top: 15px;
         }
@@ -112,7 +111,7 @@
             color: #020617;
             background: #38bdf8;
             margin-right: 10px;
-            transition: 0.3s;
+            transition: .3s;
         }
 
         .links a:hover {
@@ -120,10 +119,16 @@
             transform: translateY(-3px);
         }
 
+        /* SECTION */
         section {
             padding: 80px 20px;
             max-width: 1100px;
             margin: auto;
+            transition: .6s;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
         }
 
         section h3 {
@@ -143,7 +148,7 @@
             padding: 25px;
             border-radius: 18px;
             box-shadow: 0 10px 25px #00000055;
-            transition: 0.3s;
+            transition: .3s;
         }
 
         .skill-box:hover {
@@ -156,13 +161,55 @@
             color: #e0f2fe;
         }
 
+        /* CONTACT FORM */
+        .contact-form {
+            background: #020617;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 10px 25px #00000055;
+        }
+
+        .contact-form h3 {
+            margin-bottom: 20px;
+            color: #38bdf8;
+            text-align: center;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 12px;
+            background: #38bdf8;
+            color: #020617;
+            font-weight: bold;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .contact-form button:hover {
+            background: #e0f2fe;
+        }
+
         footer {
             text-align: center;
             padding: 40px;
             color: #94a3b8;
         }
 
-        @media (max-width:900px) {
+        @media(max-width:900px) {
             .hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -172,44 +219,13 @@
                 margin: 10px 5px 0 5px;
             }
         }
-
-        /* ===== FORM ===== */
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 25px;
-        }
-
-        form input,
-        form textarea,
-        form button {
-            padding: 12px 15px;
-            border-radius: 10px;
-            border: none;
-            font-size: 16px;
-        }
-
-        form input,
-        form textarea {
-            width: 100%;
-        }
-
-        form button {
-            background: #38bdf8;
-            color: #020617;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        form button:hover {
-            background: #e0f2fe;
-        }
     </style>
 </head>
 
 <body>
+
+    <!-- PARTICLES -->
+    <div id="particles-js"></div>
 
     <!-- HERO -->
     <div class="hero">
@@ -218,27 +234,14 @@
             <div>
                 <h1>Arafa Mohamed</h1>
                 <h2 id="hero-title"></h2>
-                <p>
-                    Passionate learner focused on <strong>Cyber Security</strong> and building secure, scalable web
-                    applications with modern <strong>Front-End</strong> and <strong>Back-End</strong> technologies.
-                </p>
-
+                <p>Passionate learner focused on <strong>Cyber Security</strong> and building secure, scalable web
+                    applications with modern <strong>Front-End</strong> & <strong>Back-End</strong> technologies.</p>
                 <div class="links">
                     <a href="https://github.com/ArafaMohamed" target="_blank">GitHub</a>
                     <a href="https://linkedin.com/in/arafa-mohamed" target="_blank">LinkedIn</a>
                     <a href="Arafa.CV.pdf" download="Arafa_Mohamed_CV.pdf" onclick="incrementCV()">Download CV</a>
                 </div>
                 <p>CV Downloads: <span id="cvCount">0</span></p>
-
-                <!-- CONTACT FORM -->
-                <form action="https://formsubmit.co/b8e226498e8ac0cb559d9c32d78fa8fd" method="POST">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                    <input type="hidden" name="_captcha" value="false">
-                    <button type="submit">Send Message</button>
-                </form>
-
             </div>
         </div>
     </div>
@@ -246,11 +249,9 @@
     <!-- ABOUT -->
     <section>
         <h3>About Me</h3>
-        <p>
-            I am a motivated learner with a strong focus on <strong>Cyber Security</strong> and web development. I aim
-            to integrate secure practices into my web projects, building safe and scalable applications while enhancing
-            my skills in both <strong>front-end</strong> and <strong>back-end</strong> technologies.
-        </p>
+        <p>I am a motivated learner with a strong focus on <strong>Cyber Security</strong> and web development. I aim to
+            integrate secure practices into my web projects, building safe and scalable applications while enhancing my
+            skills in both <strong>front-end</strong> and <strong>back-end</strong> technologies.</p>
     </section>
 
     <!-- SKILLS -->
@@ -276,10 +277,29 @@
         </div>
     </section>
 
+    <!-- CONTACT FORM -->
+    <section>
+        <div class="contact-form">
+            <h3>Contact Me</h3>
+            <form action="https://formsubmit.co/b8e226498e8ac0cb559d9c32d78fa8fd" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+                <!-- Optional FormSubmit fields -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://arafa403.github.io/Arafa.cv/thanks.html">
+                <input type="hidden" name="_subject" value="New message from Portfolio">
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
     <footer>© 2026 Arafa Mohamed — Portfolio</footer>
 
     <script>
-        // Typing effect for Hero Title
+        // Typing effect
         const title = "Cyber Security & Full-Stack Developer";
         const heroTitle = document.getElementById("hero-title");
         let index = 0;
@@ -290,19 +310,31 @@
                 setTimeout(typeEffect, 100);
             }
         }
-        heroTitle.textContent = "";
-        setTimeout(typeEffect, 500);
+        heroTitle.textContent = ""; setTimeout(typeEffect, 500);
 
-        // CV download counter
+        // Particles.js
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#38bdf8" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": true },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#38bdf8", "opacity": 0.4, "width": 1 },
+                "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "bounce": false }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }
+            },
+            "retina_detect": true
+        });
+
+        // CV Download Counter
         let cvCount = localStorage.getItem("cvCount");
         if (!cvCount) cvCount = 0;
         document.getElementById("cvCount").textContent = cvCount;
-
-        function incrementCV() {
-            cvCount++;
-            localStorage.setItem("cvCount", cvCount);
-            document.getElementById("cvCount").textContent = cvCount;
-        }
+        function incrementCV() { cvCount++; localStorage.setItem("cvCount", cvCount); document.getElementById("cvCount").textContent = cvCount; }
     </script>
 
 </body>
