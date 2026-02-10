@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arafa Mohamed | Portfolio</title>
 
-    <!-- مكتبة particles.js -->
+    <!-- particles.js -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
     <style>
@@ -24,7 +24,6 @@
             overflow-x: hidden;
         }
 
-        /* PARTICLES BACKGROUND */
         #particles-js {
             position: fixed;
             width: 100%;
@@ -34,7 +33,6 @@
             left: 0;
         }
 
-        /* HERO */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -80,12 +78,11 @@
         .hero h1 {
             font-size: 48px;
             color: #38bdf8;
-            margin-bottom: 10px;
         }
 
         .hero h2 {
             font-weight: normal;
-            margin-bottom: 20px;
+            margin: 15px 0;
             color: #cbd5f5;
             min-height: 50px;
         }
@@ -93,13 +90,7 @@
         .hero p {
             font-size: 18px;
             max-width: 500px;
-            color: #d1d5db;
             margin-bottom: 25px;
-        }
-
-        /* LINKS / BUTTONS */
-        .links {
-            margin-top: 15px;
         }
 
         .links a {
@@ -110,7 +101,7 @@
             border-radius: 25px;
             color: #020617;
             background: #38bdf8;
-            margin-right: 10px;
+            margin: 5px;
             transition: .3s;
         }
 
@@ -119,16 +110,10 @@
             transform: translateY(-3px);
         }
 
-        /* SECTION */
         section {
             padding: 80px 20px;
             max-width: 1100px;
             margin: auto;
-            transition: .6s;
-        }
-
-        section:hover {
-            transform: translateY(-5px);
         }
 
         section h3 {
@@ -148,20 +133,9 @@
             padding: 25px;
             border-radius: 18px;
             box-shadow: 0 10px 25px #00000055;
-            transition: .3s;
         }
 
-        .skill-box:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px #38bdf833;
-        }
-
-        .skill-box h4 {
-            margin-bottom: 10px;
-            color: #e0f2fe;
-        }
-
-        /* CONTACT FORM */
+        /* CONTACT */
         .contact-form {
             background: #020617;
             padding: 30px;
@@ -171,12 +145,6 @@
             box-shadow: 0 10px 25px #00000055;
         }
 
-        .contact-form h3 {
-            margin-bottom: 20px;
-            color: #38bdf8;
-            text-align: center;
-        }
-
         .contact-form input,
         .contact-form textarea {
             width: 100%;
@@ -184,7 +152,6 @@
             margin: 10px 0;
             border-radius: 10px;
             border: none;
-            outline: none;
         }
 
         .contact-form button {
@@ -196,11 +163,6 @@
             border-radius: 30px;
             border: none;
             cursor: pointer;
-            transition: .3s;
-        }
-
-        .contact-form button:hover {
-            background: #e0f2fe;
         }
 
         footer {
@@ -214,17 +176,12 @@
                 grid-template-columns: 1fr;
                 text-align: center;
             }
-
-            .links a {
-                margin: 10px 5px 0 5px;
-            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- PARTICLES -->
     <div id="particles-js"></div>
 
     <!-- HERO -->
@@ -234,12 +191,11 @@
             <div>
                 <h1>Arafa Mohamed</h1>
                 <h2 id="hero-title"></h2>
-                <p>Passionate learner focused on <strong>Cyber Security</strong> and building secure, scalable web
-                    applications with modern <strong>Front-End</strong> & <strong>Back-End</strong> technologies.</p>
+                <p>Passionate learner focused on <strong>Cyber Security</strong> and secure web applications.</p>
                 <div class="links">
                     <a href="https://github.com/ArafaMohamed" target="_blank">GitHub</a>
                     <a href="https://linkedin.com/in/arafa-mohamed" target="_blank">LinkedIn</a>
-                    <a href="Arafa.CV.pdf" download="Arafa_Mohamed_CV.pdf" onclick="incrementCV()">Download CV</a>
+                    <a href="Arafa.CV.pdf" download onclick="incrementCV()">Download CV</a>
                 </div>
                 <p>CV Downloads: <span id="cvCount">0</span></p>
             </div>
@@ -249,9 +205,7 @@
     <!-- ABOUT -->
     <section>
         <h3>About Me</h3>
-        <p>I am a motivated learner with a strong focus on <strong>Cyber Security</strong> and web development. I aim to
-            integrate secure practices into my web projects, building safe and scalable applications while enhancing my
-            skills in both <strong>front-end</strong> and <strong>back-end</strong> technologies.</p>
+        <p>I am a motivated learner focused on Cyber Security and Full-Stack Development.</p>
     </section>
 
     <!-- SKILLS -->
@@ -260,81 +214,95 @@
         <div class="skills">
             <div class="skill-box">
                 <h4>Cyber Security</h4>
-                <p>Security Basics, Risk Management, Networking Fundamentals</p>
+                <p>Security Basics, Risk, Networking</p>
             </div>
             <div class="skill-box">
                 <h4>Front-End</h4>
-                <p>HTML, CSS, JavaScript, Responsive Design</p>
+                <p>HTML, CSS, JavaScript</p>
             </div>
             <div class="skill-box">
                 <h4>Back-End</h4>
-                <p>Node.js, PHP Basics, Databases Concepts</p>
+                <p>Node.js, PHP Basics</p>
             </div>
             <div class="skill-box">
                 <h4>Tools</h4>
-                <p>Linux, Git, GitHub, VS Code</p>
+                <p>Linux, Git, GitHub</p>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT FORM -->
+    <!-- CONTACT -->
     <section>
         <div class="contact-form">
             <h3>Contact Me</h3>
-            <form action="https://formsubmit.co/b8e226498e8ac0cb559d9c32d78fa8fd" method="POST">
+            <form id="contactForm">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
                 <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-
-                <!-- Optional FormSubmit fields -->
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://arafa403.github.io/Arafa.cv/thanks.html">
-                <input type="hidden" name="_subject" value="New message from Portfolio">
-
                 <button type="submit">Send Message</button>
+                <p id="formMessage" style="margin-top:10px;"></p>
             </form>
         </div>
     </section>
 
-    <footer>© 2026 Arafa Mohamed — Portfolio</footer>
+    <footer>© 2026 Arafa Mohamed</footer>
 
     <script>
-        // Typing effect
+        /* Typing Effect */
         const title = "Cyber Security & Full-Stack Developer";
         const heroTitle = document.getElementById("hero-title");
-        let index = 0;
+        let i = 0;
         function typeEffect() {
-            if (index < title.length) {
-                heroTitle.textContent += title.charAt(index);
-                index++;
+            if (i < title.length) {
+                heroTitle.textContent += title.charAt(i++);
                 setTimeout(typeEffect, 100);
             }
         }
-        heroTitle.textContent = ""; setTimeout(typeEffect, 500);
+        setTimeout(typeEffect, 500);
 
-        // Particles.js
+        /* Particles */
         particlesJS("particles-js", {
-            "particles": {
-                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": "#38bdf8" },
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.5, "random": true },
-                "size": { "value": 3, "random": true },
-                "line_linked": { "enable": true, "distance": 150, "color": "#38bdf8", "opacity": 0.4, "width": 1 },
-                "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "bounce": false }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }
-            },
-            "retina_detect": true
+            particles: { number: { value: 80 }, color: { value: "#38bdf8" }, size: { value: 3 }, line_linked: { enable: true, color: "#38bdf8" }, move: { speed: 2 } }
         });
 
-        // CV Download Counter
-        let cvCount = localStorage.getItem("cvCount");
-        if (!cvCount) cvCount = 0;
+        /* CV Counter */
+        let cvCount = localStorage.getItem("cvCount") || 0;
         document.getElementById("cvCount").textContent = cvCount;
-        function incrementCV() { cvCount++; localStorage.setItem("cvCount", cvCount); document.getElementById("cvCount").textContent = cvCount; }
+        function incrementCV() {
+            cvCount++;
+            localStorage.setItem("cvCount", cvCount);
+            document.getElementById("cvCount").textContent = cvCount;
+        }
+
+        /* CONTACT FORM (Formspree) */
+        const form = document.getElementById("contactForm");
+        const formMessage = document.getElementById("formMessage");
+
+        form.addEventListener("submit", async function (e) {
+            e.preventDefault();
+            formMessage.textContent = "Sending...";
+            formMessage.style.color = "orange";
+
+            try {
+                const response = await fetch("https://formspree.io/f/mvzbgybv", { // <-- Form Endpoint النهائي
+                    method: "POST",
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    formMessage.style.color = "lime";
+                    formMessage.textContent = "✅ Message sent successfully!";
+                    form.reset();
+                } else {
+                    formMessage.style.color = "red";
+                    formMessage.textContent = "❌ Failed to send message. Try again!";
+                }
+            } catch (error) {
+                formMessage.style.color = "red";
+                formMessage.textContent = "⚠️ Error: " + error.message;
+            }
+        });
     </script>
 
 </body>
